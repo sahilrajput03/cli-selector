@@ -1,4 +1,8 @@
-#!/usr/bin/env node
+#!winpty node
+// ↑ ↑ ↑ ↑  For windows.
+
+// #!/usr/bin/env node
+// ↑ ↑ ↑ ↑  For linux/macos.
 const cliSelect = require("cli-select");
 const parseArgs = require("minimist");
 const { blue, underline } = require("chalk");
@@ -93,12 +97,14 @@ if (args.version) {
 
 			validateNewProject(projectName, template).then((templateId) => {
 				if (templateId) {
-					createProject({
-						projectName,
-						templateId,
-						startServer: false,
-						port: PORT,
-					});
+					logInfo(templateId);
+					logInfo(projectName);
+					// createProject({
+					// 	projectName,
+					// 	templateId,
+					// 	startServer: false,
+					// 	port: PORT,
+					// });
 				}
 			});
 
