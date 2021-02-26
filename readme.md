@@ -1,4 +1,4 @@
-# This is for something like selecting some options in the cli using node
+# Options selector for cli using node
 
 ## Install
 
